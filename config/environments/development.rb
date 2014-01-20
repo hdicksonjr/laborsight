@@ -26,4 +26,8 @@ Laborsight::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  #Loads API secrets
+  SECRETS = YAML.load_file("#{Rails.root.to_s}/config/secrets.yml")[Rails.env]
+
 end

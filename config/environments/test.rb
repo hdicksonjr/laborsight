@@ -33,4 +33,8 @@ Laborsight::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  #Loads API Secrets
+  SECRETS = YAML.load_file("#{Rails.root.to_s}/config/secrets.yml")[Rails.env]
+  
 end
