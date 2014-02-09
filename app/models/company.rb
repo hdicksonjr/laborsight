@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  geocoded_by :full_address 
+  after_validation :geocode
   # include Grade
 
   # belongs_to :industry
