@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  geocoded_by :full_address 
+  after_validation :geocode
   # include Grade
 
   # belongs_to :industry
@@ -21,6 +23,10 @@ class Company < ActiveRecord::Base
 
 
   # TODO: move to module
+  def full_address
+    "#{self.address} #{self.city} #{self.state} #{self.zip}"
+  end
+
   def median(array)
     return (array[(array.count - 1) / 2] + array[array.count / 2]) / 2.0
   end
