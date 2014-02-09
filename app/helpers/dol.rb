@@ -22,7 +22,7 @@ module Dol
 	 	request.call_api 'Compliance/OSHA/full', :select => 'activity_nr,estab_name,site_address,site_city,site_state,site_zip', :filter => "site_zip eq '61701'", :orderby => 'estab_name' do |results, error|
 		  if error
 		    p error
-		  else
+		  else	
 		    results.each { |n| save_company(n) }
 		  end
 		  temp << results
