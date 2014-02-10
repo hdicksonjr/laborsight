@@ -6,14 +6,18 @@ var MapView = {
       maxZoom: 15,
       minZoom: 2,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: style,
       disableDefaultUI: true,
       scaleControlOptions: {
       }
     };
 
-this.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var that = this;
+
+    this.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  },
+};
 
 $(document).ready(function(){
-  MapView.init(); 
-}
+     MapView.init();
+});
+

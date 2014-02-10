@@ -1,14 +1,14 @@
 class MapsController < ApplicationController
-  include Dol
+#   include Dol
   def index
-  	context = GOV::DataContext.new(SECRETS['gov']['api_host'],
-                                   SECRETS['gov']['api_key'],
-                                   SECRETS['gov']['api_secret'],
-                                   SECRETS['gov']['api_data'],
-                                   SECRETS['gov']['api_uri'])
+#   	context = GOV::DataContext.new(SECRETS['gov']['api_host'],
+#                                    SECRETS['gov']['api_key'],
+#                                    SECRETS['gov']['api_secret'],
+#                                    SECRETS['gov']['api_data'],
+#                                    SECRETS['gov']['api_uri'])
 
-  	request = GOV::DataRequest.new context
+#   	request = GOV::DataRequest.new context
 
-    @results = by_zipcode request
+#     @results = by_zipcode request
   end
 end
